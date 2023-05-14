@@ -1,10 +1,12 @@
 //
 const isAnagram = function (s, t) {
   if (s.length !== t.length) return false;
+
   // Create a hashMap
   const m = new Map(); // char: count
   const n = new Map(); // char: count
-  // Add each char of S to map
+
+  // Add each char of S to map m
   for (let i = 0; i < s.length; i++) {
     const current = s[i];
     if (m.has(current)) {
@@ -13,6 +15,8 @@ const isAnagram = function (s, t) {
       m.set(current, 1);
     }
   }
+
+  // Add each char of T to map n
   for (let i = 0; i < t.length; i++) {
     const current = t[i];
     if (n.has(current)) {
@@ -33,8 +37,8 @@ const isAnagram = function (s, t) {
 };
 
 // Driver code
-const s = "abcc";
-const t = "acbc";
+const s = "acbz";
+const t = "azbc";
 const result = isAnagram(s, t);
 console.log(result);
 
