@@ -12,7 +12,7 @@ const buildArray = function (nums) {
 
 // Optimized
 const buildArray_1 = function (nums) {
-  return (ans = nums.map((num) => nums[num]));
+  return nums.map((num) => nums[num])
 };
 
 const input = [0, 2, 1, 5, 3, 4];

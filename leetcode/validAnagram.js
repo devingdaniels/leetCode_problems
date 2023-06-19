@@ -38,7 +38,7 @@ const isAnagram = function (s, t) {
 
 // Driver code
 const s = "acbz";
-const t = "azbc";
+const t = "azbcd";
 const result = isAnagram(s, t);
 console.log(result);
 
