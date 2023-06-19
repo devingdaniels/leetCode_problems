@@ -25,20 +25,18 @@ const topKFrequent = function (nums, k) {
   }
 
   // Extract values and put into an array
-  const values = Array.from(map.values());
+  const values = Array.from(map);
 
   // Sort the values
-  values.sort((a, b) => b - a);
+  values.sort((a, b) => b[1] - a[1]);
 
   // return array with k elements of highest counts
   let ans = [];
   for (let i = 0; i < k; i++) {
-    ans.push(values[i]);
+    ans.push(values[i][0]); // Push only the key (number)
   }
   // Return k elements
   return ans;
 };
-
-console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
 
 module.exports = topKFrequent;
