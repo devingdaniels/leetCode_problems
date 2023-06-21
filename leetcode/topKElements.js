@@ -17,25 +17,21 @@ const topKFrequent = function (nums, k) {
   const map = new Map();
   // Add values and their count
   for (const num of nums) {
-    if (!map.has(num)) {
-      map.set(num, 1);
-    } else {
-      map.set(num, map.get(num) + 1);
-    }
+    map.set(num, (map.get(num) || 0) + 1);
   }
 
-  // Extract values and put into an array
+  // Convert map to array
   const values = Array.from(map);
 
-  // Sort the values
+  // Sort by count
   values.sort((a, b) => b[1] - a[1]);
 
-  // return array with k elements of highest counts
+  // Create array to store k elements
   let ans = [];
   for (let i = 0; i < k; i++) {
     ans.push(values[i][0]); // Push only the key (number)
   }
-  // Return k elements
+  // Return array of k elements
   return ans;
 };
 

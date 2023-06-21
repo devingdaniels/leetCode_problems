@@ -14,8 +14,4 @@ const containsDuplicate = function (nums) {
   return false;
 };
 
-// Driver code
-const arrWithDups = [2, 4, 6, 8, 9, 1, 2, 3];
-const arrNoDups = [2, 4, 6, 8, 9, 1, 3];
-const result = containsDuplicate(arrNoDups);
-console.log(result);
+module.exports = containsDuplicate;
